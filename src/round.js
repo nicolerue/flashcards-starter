@@ -26,8 +26,14 @@ function takeTurn(guess, roundObj) {
 
 function calculatePercentCorrect(roundObj) {
   // ((total turns - total incorrect)/total turns)*100
-  return (
-    ((roundObj.turns - roundObj.incorrectGuesses.length) / roundObj.turns) * 100
-  );
+  const percentage =
+    ((roundObj.turns - roundObj.incorrectGuesses.length) / roundObj.turns) *
+    100;
+  roundObj.percentageCorrect = percentage;
+  return percentage;
 }
-module.exports = { createRound, takeTurn, calculatePercentCorrect };
+
+function endRound(roundObj) {
+  return `** Round over! ** You answered ${roundObj.percentageCorrect}% of the questions correctly!`;
+}
+module.exports = { createRound, takeTurn, calculatePercentCorrect, endRound };

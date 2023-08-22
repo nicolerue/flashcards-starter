@@ -5,6 +5,7 @@ const {
   createRound,
   takeTurn,
   calculatePercentCorrect,
+  endRound,
 } = require("../src/round.js");
 const { createCard } = require("../src/card.js");
 const { createDeck } = require("../src/deck.js");
@@ -217,5 +218,42 @@ describe("round", function () {
     const percentage = calculatePercentCorrect(round);
 
     expect(percentage).to.equal(50);
+  });
+  it("should end of the round by returning a message with the number of percentage of questions answers correctly", function () {
+    const card1 = createCard(
+      1,
+      "What is the only mammal capable of flight?",
+      ["bear", "human", "elephants", "bats"],
+      "bats"
+    );
+
+    const card2 = createCard(
+      2,
+      "how many noses does a slug have?",
+      [1, 2, 3, 4],
+      4
+    );
+
+    const card3 = createCard(
+      3,
+      "Does a starfish have a brain?",
+      ["yes", "no"],
+      "yes"
+    );
+
+    const deck = createDeck(card1, card2, card3);
+    const round = createRound(deck);
+
+    takeTurn("bear", round);
+
+    takeTurn("bats", round);
+
+    calculatePercentCorrect(round);
+
+    const endRoundMessage = endRound(round);
+
+    expect(endRoundMessage).to.equal(
+      "** Round over! ** You answered 50% of the questions correctly!"
+    );
   });
 });
