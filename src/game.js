@@ -10,8 +10,12 @@ function printMessage(deck) {
   -----------------------------------------------------------------------`);
 }
 
+function printReport(round) {
+  if (round.turns == 5) console.log("YAYYYY");
+}
+
 function printQuestion(round) {
   util.main(round);
 }
 
-module.exports = { printMessage, printQuestion };
+module.exports = { printMessage, printQuestion, printReport };
