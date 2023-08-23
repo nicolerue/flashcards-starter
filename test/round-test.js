@@ -121,6 +121,39 @@ describe("round", function () {
 
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
+  it.only("should update the next card to become the currentCard", function () {
+    const card1 = createCard(
+      1,
+      "What is the only mammal capable of flight?",
+      ["bear", "human", "elephants", "bats"],
+      "bats"
+    );
+
+    const card2 = createCard(
+      2,
+      "how many noses does a slug have?",
+      [1, 2, 3, 4],
+      4
+    );
+
+    const card3 = createCard(
+      3,
+      "Does a starfish have a brain?",
+      ["yes", "no"],
+      "yes"
+    );
+
+    const deck = createDeck(card1, card2, card3);
+    const round = createRound(deck);
+    expect(round.currentCard.id).to.equal(1);
+
+    takeTurn("bear", round);
+    expect(round.currentCard.id).to.equal(2);
+
+    takeTurn("bats", round);
+    expect(round.currentCard.id).to.equal(3);
+  });
+
   it("should be able to update the turns count", function () {
     const card1 = createCard(
       1,
@@ -179,11 +212,9 @@ describe("round", function () {
     const round = createRound(deck);
 
     const outcome = takeTurn("bear", round);
-    expect(round.turns).to.deep.equal(1);
     expect(outcome).to.equal("incorrect!");
 
-    const outcome2 = takeTurn("bats", round);
-    expect(round.turns).to.equal(2);
+    const outcome2 = takeTurn(4, round);
     expect(outcome2).to.equal("correct!");
   });
   it("should calculate and return the percentage of correct guesses", function () {
@@ -213,7 +244,7 @@ describe("round", function () {
 
     takeTurn("bear", round);
 
-    takeTurn("bats", round);
+    takeTurn(4, round);
 
     const percentage = calculatePercentCorrect(round);
 
@@ -246,7 +277,7 @@ describe("round", function () {
 
     takeTurn("bear", round);
 
-    takeTurn("bats", round);
+    takeTurn(4, round);
 
     calculatePercentCorrect(round);
 

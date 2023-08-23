@@ -1,12 +1,8 @@
-function createRound(
-  deckArr,
-  currentIndex = 0,
-  incorrectGuesses = [],
-  turns = 0
-) {
+function createRound(deckArr, currIndex = 0, incorrectGuesses = [], turns = 0) {
   const roundObj = {
     deck: deckArr,
-    currentCard: deckArr[currentIndex],
+    currIndex: currIndex,
+    currentCard: deckArr[currIndex],
     incorrectGuesses: incorrectGuesses,
     turns: turns,
   };
@@ -14,14 +10,18 @@ function createRound(
 }
 
 function takeTurn(guess, roundObj) {
-  roundObj.turns += 1;
-  roundObj.currentIndex += 1;
+  console.log("correct-answer", roundObj.currentCard.correctAnswer);
+  console.log("guess", guess);
   if (roundObj.currentCard.correctAnswer !== guess) {
     roundObj.incorrectGuesses.push(roundObj.currentCard.id);
-    return "incorrect!";
+    var response = "incorrect!";
   } else {
-    return "correct!";
+    var response = "correct!";
   }
+  roundObj.turns += 1;
+  roundObj.currIndex += 1;
+  roundObj.currentCard = roundObj.deck[roundObj.currIndex];
+  return response;
 }
 
 function calculatePercentCorrect(roundObj) {
