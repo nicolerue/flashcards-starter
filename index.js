@@ -7,7 +7,7 @@ const { createCard } = require("./src/card.js");
 const { createDeck, countCards } = require("./src/deck.js");
 const { createRound } = require("./src/round.js");
 
-const { printMessage, printQuestion, printReport } = require("./src/game.js");
+const { printMessage, printQuestion } = require("./src/game.js");
 
 function start() {
   const cards = cardData.map((el) => {
@@ -17,7 +17,6 @@ function start() {
   const round = createRound(deck);
   printMessage(deck);
   printQuestion(round);
-  printReport(round);
 }
 
 start();

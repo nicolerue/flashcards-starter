@@ -33,7 +33,7 @@ describe("round", function () {
   );
 
   const deck = createDeck(card1, card2, card3);
-  let round = createRound(deck);
+  let round;
   beforeEach(function () {
     round = createRound(deck);
   });

@@ -44,10 +44,10 @@ const cardData = [
     id: 7,
     question: "'Monkey is...'",
     answers: [
-      "a primate who lives in the jungle",
-      "a cat who lives on Columbia Street",
+      "a furry primate who lives in the jungle",
+      "a floofy cat who lives on Columbia Street",
     ],
-    correctAnswer: "a cat who lives on Columbia Street",
+    correctAnswer: "a floofy cat who lives on Columbia Street",
   },
   {
     id: 8,
