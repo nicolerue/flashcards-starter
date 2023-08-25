@@ -1,58 +1,56 @@
-# FlashCards Starter Kit
+# FlashCards Game
 
-## Fork This Repo
+### Abstract:
 
-On the top right corner of this page, click the **Fork** button.
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-## Setup
+- This game is played in the terminal, and was created following the principles of Test Drive Development(TDD). The functions used to run the game were tested using Mocha and Chai.
+- Assertion statements check the functionality of each function, accounting for both sad and happy paths. 
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+### Installation Instructions:
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
-Once you have cloned the repo, change into the directory and install the library dependencies using the command:
+1. Open the terminal.
+2. Navigate to the folder that you wish to clone the file into.
+3. Ensure that the directory is initialized with git. If not, run `git init` in the terminal.
+4. In the command line enter `git clone git@github.com:nicolerue/flashcards-starter.git`
+5. In the command line enter `code .` to open the file
+6. In the command line enter `node index.js`
+7. Enjoy the application! 
 
-```bash
-npm install
-```
+### Preview of App:
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have skipped tests in your `card` test file show up.
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+![Screen Shot 2023-08-24 at 8 31 08 PM](https://github.com/nicolerue/flashcards-starter/assets/124186166/459bcbd3-9059-400b-9e95-2d3ec79e4f66)
 
-```bash
-Your project is running...
-```
+### Context:
 
-*Note that you will not need to you run this file until you are running your `game` file in Iteration 3. Prior to that, you should strive to use TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 
+- We had 4 days to complete the project.
+- We are currently in week 1 of Mod 2 at Turing.
 
-## Where to Add Your Code
+### Contributors:
 
-**Create all of your feature code files in the `src` directory.** Use the `module.exports` and `require` syntax to share code across files.
+[//]: <> (Who worked on this application? Link to their GitHubs.)
 
-## How to View Your Code in Action
+- This was a solo project.
 
-Once you are working through Iteration 3, you will want to run the `node index.js` command in your terminal to run the game.
+### Learning Goals:
 
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
 
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+- Contribute code to an partially constructed application
+- Follow spec/prompts to make a working application
+- Write modular, reusable code that follows SRP (Single Responsibility Principle)
+- Implement a robust testing suite using TDD
+- Worked with Javascript, Mocha, and Chai
 
----
+### Wins + Challenges:
 
-## Test Files Organization
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `card-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
+- Writing my own tests was really fun, and beginning to better understand what each line in the testing files were doing, and experiencing how using TDD principles really solidifed how I can follow SRP.
+- With every project, I'm gaining a better understanding of what is being returned from each function and how I can access those return values elswhere in the code.
